@@ -10,10 +10,14 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.bumptech.glide.Glide
 import com.chaudharynabin6.memeshare.databinding.ActivityMainBinding
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.binding = ActivityMainBinding.inflate(this.layoutInflater)
@@ -28,11 +32,12 @@ class MainActivity : AppCompatActivity() {
 
 // Request a string response from the provided URL.
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
-            Response.Listener { response ->
+            { response ->
                 Log.w("json response",response.toString(1))
-                Log.w("title",response.getString("title"))
+                Log.w("title",response.getString("preview"))
+                Glide.with(this).load(response.getJSONArray("preview")[2]).into(this.binding.memeImageView)
             },
-            Response.ErrorListener { error ->
+            { error ->
                 // TODO: Handle error
                 Log.w("json error",error.localizedMessage)
             }
