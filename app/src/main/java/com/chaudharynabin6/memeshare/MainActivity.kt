@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadImage(){
     this.binding.progressCircular.visibility = View.VISIBLE
     // Instantiate the RequestQueue.
-        val queue = Volley.newRequestQueue(this)
+//        val queue = Volley.newRequestQueue(this)
         val url = "https://meme-api.herokuapp.com/gimme"
 
     // Request a string response from the provided URL.
@@ -81,6 +81,8 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Add the request to the RequestQueue.
+//        queue.add(jsonObjectRequest)
+        val queue = APIRequestQueue.getInstance(this.applicationContext).requestQueue
         queue.add(jsonObjectRequest)
     }
 

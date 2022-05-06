@@ -5,6 +5,7 @@
 
 ## use Volley Library for API call
 * https://google.github.io/volley/request.html
+* use singleton pattern : https://google.github.io/volley/requestqueue.html
 
 ## using glide for image Loading and Caching from network
 * https://github.com/bumptech/glide
