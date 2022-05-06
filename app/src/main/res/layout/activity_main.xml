@@ -52,6 +52,7 @@
             android:layout_marginEnd="16dp"
             android:text="@string/next"
             android:textAllCaps="false"
+            android:onClick="nextMeme"
             />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

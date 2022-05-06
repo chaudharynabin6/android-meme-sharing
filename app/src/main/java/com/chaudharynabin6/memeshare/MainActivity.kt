@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Log.ASSERT
+import android.view.View
 import android.widget.TextView
 import com.android.volley.Request
 import com.android.volley.Response
@@ -22,15 +23,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         this.binding = ActivityMainBinding.inflate(this.layoutInflater)
         setContentView(this.binding.root)
+        loadImage()
 
-//        this.binding.memeImageView.setImageResource(R.mipmap.ic_launcher)
+
+    }
 
 
-// Instantiate the RequestQueue.
+    private fun loadImage(){
+
+    // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(this)
         val url = "https://meme-api.herokuapp.com/gimme"
 
-// Request a string response from the provided URL.
+    // Request a string response from the provided URL.
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
                 Log.w("json response",response.toString(1))
@@ -43,8 +48,13 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
-    // Add the request to the RequestQueue.
-            queue.add(jsonObjectRequest)
+        // Add the request to the RequestQueue.
+        queue.add(jsonObjectRequest)
     }
-//   for network call use https://google.github.io/volley/
+
+    fun nextMeme(view: View) {
+        loadImage()
+    }
+
+
 }
