@@ -13,13 +13,20 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/meme_image"
         android:scaleType="fitCenter"
-        android:src="@drawable/meme"
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
-
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/memeImageView"
+        app:layout_constraintEnd_toEndOf="@id/memeImageView"
+        app:layout_constraintTop_toTopOf="@id/memeImageView"
+        app:layout_constraintBottom_toBottomOf="@id/memeImageView"
+        />
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -37,6 +44,8 @@
             android:text="@string/share"
             android:layout_marginStart="16dp"
             android:textAllCaps="false"
+            android:onClick="shareMeme"
+
             />
 
         <Space
