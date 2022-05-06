@@ -27,7 +27,7 @@ import java.io.FileOutputStream
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private var currentUrl: String? = null;
+    private var currentUrl: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.binding = ActivityMainBinding.inflate(this.layoutInflater)
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             },
             { error ->
                 // TODO: Handle error
-                Log.w("json error",error.localizedMessage)
+                Log.w("json error",error.localizedMessage.toString())
             }
         )
 

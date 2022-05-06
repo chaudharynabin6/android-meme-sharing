@@ -13,8 +13,11 @@
 
 
 ## sharing image 
-    * source: https://www.geeksforgeeks.org/how-to-share-image-of-your-app-with-another-app-in-android/
-    * fixing permission error:https://errorsfixing.com/permission-denial-while-sharing-file-with-fileprovider/
+* source: https://www.geeksforgeeks.org/how-to-share-image-of-your-app-with-another-app-in-android/
+* fixing permission error:https://errorsfixing.com/permission-denial-while-sharing-file-with-fileprovider/
 
 ## sharing different types
-    * https://guides.codepath.com/android/Sharing-Content-with-Intents
+* https://guides.codepath.com/android/Sharing-Content-with-Intents
+
+## Only allowing the intent to specific package
+* https://developer.android.com/training/package-visibility/declaring
